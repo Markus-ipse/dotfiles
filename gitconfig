@@ -1,22 +1,11 @@
-#Git config
-[push]
-        default = simple
 [core]
         trustctime = false
         editor = vim
         filemode = false
-        autocrlf = true
 [color]
         ui = true
 [credential]
         helper = cache --timeout=3600
-[merge]
-        tool = p4merge
-[mergetool]
-        keeptemporaries = false
-        keepbackups = false
-        prompt = false
-        trustexitcode = false
 [alias]
         last = log -1 --stat
         cp = cherry-pick
@@ -31,8 +20,3 @@
         dc = diff --cached
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
         recent = ! git for-each-ref --format='%(committerdate:short),%(authorname),%(refname:short)' --sort=committerdate refs/heads/ | column -t -s ','
-[user]
-        name = Markus Ånöstam
-        email = markus.anostam@x5music.com
-#[mergetool "p4merge"]
-#        cmd = /usr/bin/p4merge \"$(cygpath -w \"$BASE\")\" \"$(cygpath -w \"$LOCAL\")\" \"$(cygpath -w \"$REMOTE\")\" \"$(cygpath -w \"$MERGED\")\"
